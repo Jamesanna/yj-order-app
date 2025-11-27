@@ -31,19 +31,24 @@ import {
 } from 'firebase/firestore';
 
 // --- Global Setup & Helpers ---
-// const firebaseConfig = JSON.parse(__firebase_config);
-// const app = initializeApp(firebaseConfig);
-// const auth = getAuth(app);
-// const db = getFirestore(app);
-// const appId = typeof __app_id !== 'undefined' ? __app_id : 'yj-order-system';
+
+// 1. 設定檔 (請放在最上面)
 const firebaseConfig = {
-  apiKey: "AIzaSyDRS1zlZ9HEY0B6d0Huo3pbpdmR49LwAVI",
+  apiKey: "AIzaSyDRS1zLZ9HEY0B6d0Huo3pbqdmR49LwAVI",
   authDomain: "yj-order-system.firebaseapp.com",
   projectId: "yj-order-system",
   storageBucket: "yj-order-system.firebasestorage.app",
   messagingSenderId: "568496529184",
   appId: "1:568496529184:web:a17f23c3e960e0a4da0145"
 };
+
+// 2. 啟動 Firebase (這三行必須存在，且不能被註解掉！)
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+// 3. 設定 App ID
+const appId = 'yj-order-system';
 
 
 // Utility: Dynamic Script Loader for JSZip
